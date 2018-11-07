@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Workshop Javascript</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h5 class="center" style="margin-bottom:50px">CDG Fórum</h5>
+            <hr>
+            <div class="input-field col s6">
+                <input placeholder="Gamer" id="gamer" type="text" class="validate">
+            </div>
+            <div class="input-field col s6">
+                <select>
+                    <option value="" disabled selected>Selecione o jogo</option>
+                    <option value="1">Barbie</option>
+                    <option value="2">Counter Strike</option>
+                    <option value="3">Super Mario World</option>
+                    <option value="4">Hearthstone</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 center">
+                <input placeholder="Dica" id="dica" type="text" class="validate" style="margin-bottom:50px">
+                <a class="waves-effect waves-light btn" id="enviar">Enviar</a>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <p id="jogo"></p>
+        </div>
+    </div>
+
+    <!-- Chamada do JQuery -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- Chamada do Materializa -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
+</body>
