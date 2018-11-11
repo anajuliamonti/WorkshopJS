@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Javascript for Wizards - Segundo Dia - JQuery</title>
+    
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+</head>
+
+<body>
+    <!-- O container serve para criar margem na pagina, centralizando o conteudo-->
+    <div class="container">
+        <div class = "row">
+            <div class="col s12">
+                <label>Cor</label>
+                <select id ="cor">
+                    <option value="">Selecione a cor desejada:</option>
+                    <option value="R">Vermelho</option>
+                    <option value="G">Verde</option>
+                    <option value="B">Azul</option>
+                </select>
+        </div>
+    </div>
+
+    <!-- Chamada do JQuery -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- Chamada do Materialize -->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
+
+    $("#cor").change(
+        function(){
+            var cor = this.value; //identifica a cor que foi selecionada
+            if(cor == "R"){
+                $("body").css("background-color","red"); //se a cor vermelha for selecionada, o background ira ficar vermelho
+            }else if(cor == "G"){
+                $("body").css("background-color","green");
+            }else if(cor == "B"){
+                $("body").css("background-color","blue");
+            }else{
+                $("body").css("background-color","white");
+            }
+        });
+</script>
