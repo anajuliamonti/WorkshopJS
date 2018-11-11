@@ -20,7 +20,7 @@
                 <input placeholder="Gamer" id="gamer" type="text" class="validate">
             </div>
             <div class="input-field col s6">
-                <select>
+                <select id="game">
                     <option value="" disabled selected>Selecione o jogo</option>
                     <option value="1">Barbie</option>
                     <option value="2">Counter Strike</option>
@@ -32,7 +32,7 @@
         <div class="row">
             <div class="input-field col s12 center">
                 <input placeholder="Dica" id="dica" type="text" class="validate" style="margin-bottom:50px">
-                <a class="waves-effect waves-light btn" id="enviar">Enviar</a>
+                <button class="waves-effect waves-light btn" id="enviar">Enviar</button>
             </div>
         </div>
         <hr>
@@ -45,11 +45,25 @@
     <!-- Chamada do JQuery -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <!-- Chamada do Materializa -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 
     <script>
         $(document).ready(function () {
             $('select').formSelect();
+        });
+
+        $("#enviar").click(function () {
+            var gamer = document.getElementById("gamer").value;
+            var jogos = document.getElementById("game");
+            var dica = document.getElementById("dica").value;
+
+            var jogoSelecionado = jogos.options[jogos.selectedIndex].text;
+
+            $("#jogo").append(gamer + "(" + jogoSelecionado + ")" + ": " + dica + "<br>");
+
+            document.getElementById("gamer").value = "";
+            document.getElementById("game").selectedIndex = "0";
+            document.getElementById("dica").value = "";
         });
     </script>
 </body>
